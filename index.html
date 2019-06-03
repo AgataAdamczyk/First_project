@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -93,10 +93,12 @@
             </div>
 
             <div class="section2__article3 container_3">
-                <article class="article3__a">
-                    <h2 class="article__h">Zwiększ rozpoznawalność swojej marki</h2>
-                    <p class="article__p">Otwierając sklep na shopabc.pl, nie tylko zwiększysz sprzedaż, ale także powiększysz swoje grono odbiorców i rozpoznawalność marki w internecie.</p>
-                </article>
+                <div class="article3__box">
+                    <article class="article3__a">
+                        <h2 class="article__h">Zwiększ rozpoznawalność swojej marki</h2>
+                        <p class="article__p">Otwierając sklep na shopabc.pl, nie tylko zwiększysz sprzedaż, ale także powiększysz swoje grono odbiorców i rozpoznawalność marki w internecie.</p>
+                    </article>
+                </div>
                 <div class="article3__square">
                     <img class="article3__img" src="../First_project/images/icons/Trumpet.png" alt="Trumpet">
                 </div>
@@ -104,12 +106,12 @@
         </section>
 
 <!--Section3-->
-        <section class="section3">
+        <section class="section3 container_4">
             <h2 class="price__h2">Cennik</h2>
             <div class="section3__price">
                 <div class="price__basic">
-                    <h3 class="price__h3">Podstawowy</h3>
-                    <p class="price__basicP">$0</p>
+                    <h3 id="price__bp">Podstawowy</h3>
+                    <p class="prices prices--basic">$0</p>
                     <ul class="price__lists">
                         <li class="lists__items">
                             <img src="../First_project/images/icons/checkmark.svg" alt="check">
@@ -135,10 +137,10 @@
 
                 </div>
                 <div class="price__professional">
-                    <h3 class="price__h3P">Profesjonalny</h3>
-                    <p class="price__profP">$25</p>
+                    <h3 id="price__p">Profesjonalny</h3>
+                    <p class="prices prices--prof">$25</p>
                     <p class="price__limit">Oferta ograniczona</p>
-                    <ul class="price__lists">
+                    <ul class="price__lists price price__lists--pro">
                         <li class="lists__items">
                             <img src="../First_project/images/icons/checkmark.svg" alt="check">
                             500 MB Przestrzeni dyskowej
@@ -162,8 +164,8 @@
                     </ul>
                 </div>
                 <div class="price__premium">
-                    <h3 class="price__h3">Premium</h3>
-                    <p class="price__profP">$60</p>
+                    <h3 id="price__bp">Premium</h3>
+                    <p class="prices prices--premium">$60</p>
                     <p class="price__limit">Oferta ograniczona</p>
                     <ul class="price__lists">
                         <li class="lists__items">
@@ -192,34 +194,101 @@
             </div>
         </section>
 
-<!--Section4-->
-        <section class="section4">
-            <div class="section4__info">
-                <h2 class="info__h2">Masz pytania?</h2>
-                <p class="info__p1">Zostaw dla nas swój adres mailowy, lub zadzwoń!</p>
-                <ul class="info__links">
-                    <li class="info__link">
-                        <a href="#">
-                            <img class="info__icons" src="../First_project/images/icons/Mail%20Icon.svg" alt="Mail">
-                            info@shopabc.pl
-                        </a>
-                    </li>
-                    <li class="info__link">
-                        <a href="#">
-                            <img class="info__icons" src="../First_project/images/icons/Phone%20Icon.svg" alt="Phone">
-                            123 456 789
-                        </a>
-                    </li>
-                </ul>
-                <div class="section4__form">
+<!--Section4 Calculate-->
+        <section class="section4 container_5">
+            <h2 class="calc__h">Oblicz ile zapłacisz</h2>
+
+            <div class="calc">
+                <div class="calc__input">
+                    <form>
+                    <input id="calc__input--nrProducts" type="number" name="products" placeholder="Ilość produktów">
+                    <input id="calc__input--nrOrders" type="number" name="orders" placeholder="Szacowana ilość zamówień w miesiącu">
+                        <ul class="calc__select">
+                            <li class="select__placeholder">Wybierz pakiet</li>
+                            <ul class="calc__select--menu">
+<!--                                <li>Podstawowy</li>-->
+<!--                                <li>Profesjonalny</li>-->
+<!--                                <li>Premium</li>-->
+                            </ul>
+                        </ul>
+                    <div class="checkbox__box">
+                        <label class="form__checkbox">
+                            <input type="checkbox" name="agreement" value="agreement" checked>
+                            Obsługa księgowa
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="form__checkbox">
+                            <input type="checkbox" name="agreement" value="agreement" checked>
+                            Wynajem terminala płatniczeniego
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    </form>
+                </div>
+
+                <div class="calc__result">
+                    <div class="calc__result--box">
+                        <span>Produkty</span>
+                        <span id="product__price">20 * $0.5</span>
+                        <span id="product__value">$10</span>
+                    </div>
+
+                    <div class="calc__result--box">
+                        <span>Zamówienia</span>
+                        <span id="order__price">30 * $0.25</span>
+                        <span id="order__value">$7.5</span>
+                    </div>
+
+                    <div class="calc__result--box">
+                        <span>Pakiet</span>
+                        <span id="option__select">Premium</span>
+                        <span id="option__value">$60</span>
+                    </div>
+
+                    <div class="calc__result--box">
+                        <span>Ksiegowość</span>
+                        <span id="acc__value">$35</span>
+                    </div>
+
+                    <div class="calc__result--box">
+                        <span>Terminal</span>
+                        <span id="terminal__value">$5</span>
+                    </div>
+
+                    <div class="calc__result--sum">
+                        <span id="sum">Suma</span>
+                        <span id="sum--value">$0</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+<!--       Section5 -->
+        <section class="section5">
+            <div class="container_6">
+                <div class="section5__info">
+                    <h2 class="info__h2">Masz pytania?</h2>
+                    <p class="info__p1">Zostaw dla nas swój adres mailowy, lub zadzwoń!</p>
+                    <div class="info__box">
+                        <img class="info__icons" src="../First_project/images/icons/Mail%20Icon.svg" alt="Mail">
+                        <span class="info__text">info@shopabc.pl</span>
+                        <img class="info__icons" src="../First_project/images/icons/Phone%20Icon.svg" alt="Phone">
+                        <span class="info__text">123 456 789</span>
+                    </div>
+                </div>
+                <div class="section5__form">
                     <form class="form__area">
-                        <label class="form__label" for="name">Imię i nazwisko</label><br>
+                        <label class="form__label" for="name">Imię i nazwisko</label>
                             <input class="form__input" type="text" name="name" id="name">
-                        <label class="form__label" for="e-mail">Email</label><br>
+                        <label class="form__label" for="e-mail">Email</label>
                             <input class="form__input" type="email" name="e-mail" id="e-mail">
-
-
-
+                        <label class="form__checkbox">
+                            <input type="checkbox" name="agreement" value="agreement" checked>
+                            Wyrażam zgodę na przetwarzanie danych i kontakt.
+                            <span class="checkmark"></span>
+                        </label>
+                        <button class="form__btn" type="submit" value="send">Wyślij</button>
                     </form>
                 </div>
 
@@ -249,4 +318,6 @@
 </footer>
 
 </body>
+
+<script src="js/index.js"></script>
 </html>
