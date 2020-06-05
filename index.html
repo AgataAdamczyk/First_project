@@ -1,14 +1,16 @@
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <nav class="navigation">
         <div class="navigation__content container">
@@ -30,19 +32,19 @@
         </div>
     </nav>
 
-<!--Header-->
+    <!--Header-->
     <header class="header">
         <h1 class="header__h1">Sprzedawaj więcej!</h1>
         <p class="header__p">Otwarcie sklepu na naszej platformie, dramatycznie zwiększy twoją sprzedaż</p>
         <a href="#" class="header__link">Otwórz swój sklep</a>
     </header>
 
-<!--MAIN Section1-->
+    <!--MAIN Section1-->
     <main>
         <section class="section1 ">
             <article class="container_2">
                 <h2 class="section1__h2">Najpopularniejsza platforma sprzedażowa w kraju</h2>
-                 <div class="section1__statistics">
+                <div class="section1__statistics">
                     <div class="statistics__items">
                         <div class="stat__circle1">
                             <img class="stat__person" src="../First_project/images/icons/Person.svg" alt="Person">
@@ -64,23 +66,24 @@
                         <p class="stat__p">10000+</p>
                         <p class="stat__p2">dodawanych wpisów dziennie</p>
                     </div>
-                 </div>
-             </article>
+                </div>
+            </article>
         </section>
 
-<!--Section2-->
+        <!--Section2-->
         <section class="section2">
             <div class="section2__article1 container_3">
                 <article class="article1__a">
                     <h2 class="article__h">Bądź zawsze pierwszy</h2>
-                    <p class="article__p">Twój sklep będzie umieszczony na głównej stronie naszego katalogu, gdzie setki tysięcy potencjalnych klientów ją zobaczy!</p>
+                    <p class="article__p">Twój sklep będzie umieszczony na głównej stronie naszego katalogu, gdzie setki
+                        tysięcy potencjalnych klientów ją zobaczy!</p>
                 </article>
                 <div class="article1__image">
                     <img class="article1__img" src="../First_project/images/icons/Macbook2.png" alt="Macbook2">
                     <div class="article1__square"></div>
                 </div>
             </div>
-                    
+
             <div class="section2__article2 container_3">
                 <div class="article2__image">
                     <img class="article2__img" src="../First_project/images/icons/iPhone2.png" alt="iPhone2">
@@ -88,7 +91,8 @@
                 </div>
                 <article class="article2__a">
                     <h2 class="article__h">Twój sklep jest tam, gdzie Ty jesteś!</h2>
-                    <p class="article__p">Nieważne czy jesteś na telefonie, tablecie czy komputerze. Wszystkie potrzebne Ci operacje masz w zasięgu ręki.</p>
+                    <p class="article__p">Nieważne czy jesteś na telefonie, tablecie czy komputerze. Wszystkie potrzebne
+                        Ci operacje masz w zasięgu ręki.</p>
                 </article>
             </div>
 
@@ -96,7 +100,8 @@
                 <div class="article3__box">
                     <article class="article3__a">
                         <h2 class="article__h">Zwiększ rozpoznawalność swojej marki</h2>
-                        <p class="article__p">Otwierając sklep na shopabc.pl, nie tylko zwiększysz sprzedaż, ale także powiększysz swoje grono odbiorców i rozpoznawalność marki w internecie.</p>
+                        <p class="article__p">Otwierając sklep na shopabc.pl, nie tylko zwiększysz sprzedaż, ale także
+                            powiększysz swoje grono odbiorców i rozpoznawalność marki w internecie.</p>
                     </article>
                 </div>
                 <div class="article3__square">
@@ -105,7 +110,7 @@
             </div>
         </section>
 
-<!--Section3-->
+        <!--Section3-->
         <section class="section3 container_4">
             <h2 class="price__h2">Cennik</h2>
             <div class="section3__price">
@@ -194,77 +199,77 @@
             </div>
         </section>
 
-<!--Section4 Calculate-->
-        <section class="section4 container_5">
-            <h2 class="calc__h">Oblicz ile zapłacisz</h2>
+        <!--Section Calculate-->
+        <section class="section__calc container__calc">
+            <h2 class="calc__header">Oblicz ile zapłacisz</h2>
 
-            <div class="calc">
-                <div class="calc__input">
-                    <form>
-                    <input id="calc__input--nrProducts" type="number" name="products" placeholder="Ilość produktów">
-                    <input id="calc__input--nrOrders" type="number" name="orders" placeholder="Szacowana ilość zamówień w miesiącu">
-                        <ul class="calc__select">
-                            <li class="select__placeholder">Wybierz pakiet</li>
-                            <ul class="calc__select--menu">
-<!--                                <li>Podstawowy</li>-->
-<!--                                <li>Profesjonalny</li>-->
-<!--                                <li>Premium</li>-->
-                            </ul>
-                        </ul>
-                    <div class="checkbox__box">
-                        <label class="form__checkbox">
-                            <input type="checkbox" name="agreement" value="agreement" checked>
-                            Obsługa księgowa
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="form__checkbox">
-                            <input type="checkbox" name="agreement" value="agreement" checked>
-                            Wynajem terminala płatniczeniego
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
+            <div class="calc__content">
+                <div class="calc__inputs">
+                    <form action="#">
+                        <input id="calc__input--quantityProducts" type="number" name="productsQuantity" placeholder="Ilość produktów">
+                        <input id="calc__input--quantityOrders" type="number" name="ordersQuantity" placeholder="Szacowana ilość zamówień w miesiącu">
+
+                        <select class="calc__select" name="packageSelect">
+                            <option value="" disabled selected>Wybierz pakiet</option>
+                            <option value="basic">Podstawowy</option>
+                            <option value="professional">Profesjonalny</option>
+                            <option value="premium">Premium</option>
+                        </select>
+
+                        <div class="checkbox__box">
+                            <label class="form__checkbox">
+                                <input type="checkbox" name="accountant" value="accountant" checked>
+                                Obsługa księgowa
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="form__checkbox">
+                                <input type="checkbox" name="terminal" value="terminal" checked>
+                                Wynajem terminala płatniczeniego
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
                     </form>
                 </div>
 
-                <div class="calc__result">
-                    <div class="calc__result--box">
+                <div class="calc__results">
+                    <div class="calc__results--box">
                         <span>Produkty</span>
-                        <span id="product__price">20 * $0.5</span>
-                        <span id="product__value">$10</span>
+                        <span id="products__price--calc"></span>
+                        <span id="products__price--value"></span>
                     </div>
 
-                    <div class="calc__result--box">
+                    <div class="calc__results--box">
                         <span>Zamówienia</span>
-                        <span id="order__price">30 * $0.25</span>
-                        <span id="order__value">$7.5</span>
+                        <span id="orders__price--calc"></span>
+                        <span id="orders__price--value"></span>
                     </div>
 
-                    <div class="calc__result--box">
+                    <div class="calc__results--box">
                         <span>Pakiet</span>
-                        <span id="option__select">Premium</span>
-                        <span id="option__value">$60</span>
+                        <span id="package__select--option"></span>
+                        <span id="package__select--value"></span>
                     </div>
 
-                    <div class="calc__result--box">
+                    <div class="calc__results--box">
                         <span>Ksiegowość</span>
-                        <span id="acc__value">$35</span>
+                        <span id="accountant__value">35$</span>
                     </div>
 
-                    <div class="calc__result--box">
+                    <div class="calc__results--box">
                         <span>Terminal</span>
-                        <span id="terminal__value">$5</span>
+                        <span id="terminal__value">5$</span>
                     </div>
 
-                    <div class="calc__result--sum">
-                        <span id="sum">Suma</span>
-                        <span id="sum--value">$0</span>
+                    <div class="calc__results--total">
+                        <span id="total">Suma</span>
+                        <span id="total__value">0$</span>
                     </div>
                 </div>
             </div>
 
         </section>
 
-<!--       Section5 -->
+        <!--       Section5 -->
         <section class="section5">
             <div class="container_6">
                 <div class="section5__info">
@@ -280,9 +285,9 @@
                 <div class="section5__form">
                     <form class="form__area">
                         <label class="form__label" for="name">Imię i nazwisko</label>
-                            <input class="form__input" type="text" name="name" id="name">
+                        <input class="form__input" type="text" name="name" id="name">
                         <label class="form__label" for="e-mail">Email</label>
-                            <input class="form__input" type="email" name="e-mail" id="e-mail">
+                        <input class="form__input" type="email" name="e-mail" id="e-mail">
                         <label class="form__checkbox">
                             <input type="checkbox" name="agreement" value="agreement" checked>
                             Wyrażam zgodę na przetwarzanie danych i kontakt.
@@ -296,28 +301,29 @@
         </section>
     </main>
 
-<footer class="footer">
-    <div class="footer__content container">
-        <span class="footer__info">
-            <p class="footer__logo">shopabc.pl</p>
-            <p class="footer__copyright">&copy; 2019 Wszystkie prawa zastrzeżone</p>
-        </span>
-        <ul class="footer__media">
-            <li class="media__link">
-                <a href="https://twitter.com/">
-                    <img class="media__icon" src="../First_project/images/icons/Twitter.svg" alt="Twitter">
-                </a>
-            </li>
-            <li class="media__link">
-                <a href="https://www.facebook.com/">
-                    <img class="media__icon" src="../First_project/images/icons/Facebook.svg" alt="Facebook">
-                </a>
-            </li>
-        </ul>
-    </div>
-</footer>
+    <footer class="footer">
+        <div class="footer__content container">
+            <span class="footer__info">
+                <p class="footer__logo">shopabc.pl</p>
+                <p class="footer__copyright">&copy; 2019 Wszystkie prawa zastrzeżone</p>
+            </span>
+            <ul class="footer__media">
+                <li class="media__link">
+                    <a href="https://twitter.com/">
+                        <img class="media__icon" src="../First_project/images/icons/Twitter.svg" alt="Twitter">
+                    </a>
+                </li>
+                <li class="media__link">
+                    <a href="https://www.facebook.com/">
+                        <img class="media__icon" src="../First_project/images/icons/Facebook.svg" alt="Facebook">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
 
 </body>
 
 <script src="js/index.js"></script>
+
 </html>
