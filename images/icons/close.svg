@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11">
-  <g id="XMLID_3_" transform="translate(-154 -261.7)">
-    <path id="XMLID_2_" d="M163.312,272.2h-7.624a1.2,1.2,0,0,1-1.188-1.188v-7.624a1.2,1.2,0,0,1,1.188-1.188h7.624a1.2,1.2,0,0,1,1.188,1.188v7.624A1.2,1.2,0,0,1,163.312,272.2Z" fill="none" stroke="#eb486e" stroke-miterlimit="10" stroke-width="1"/>
-    <path id="XMLID_18_" d="M160.436,267.249l2.264,2.265-.886.886-2.264-2.265-2.264,2.265-.886-.886,2.264-2.265-2.264-2.265.886-.985,2.264,2.363L161.814,264l.886.985Z" fill="#eb486e"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11"><defs><style>.a,.d{fill:none;}.a{stroke:#eb476e;}.b{fill:#eb476e;font-size:9px;font-family:Raleway-Bold, Raleway;font-weight:700;}.c{stroke:none;}</style></defs><g transform="translate(-482.5 -4397)"><g class="a" transform="translate(482.5 4397)"><rect class="c" width="11" height="11" rx="2"/><rect class="d" x="0.5" y="0.5" width="10" height="10" rx="1.5"/></g><text class="b" transform="translate(482.5 4397)"><tspan x="3.111" y="8">x</tspan></text></g></svg>

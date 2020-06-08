@@ -1,20 +1,20 @@
 <!doctype html>
-<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<html lang="pl">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ShopABC.pl</title>
+    <!-- <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' /> -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/index.js"></script>
 </head>
 
 <body>
     <nav class="navigation">
         <div class="navigation__content container">
-            <span class="navigation__logo">shopabc.pl</span>
+            <span class="navigation__logo"><a href="#"></a>shopabc.pl</a></span>
             <ul class="navigation__lists">
                 <li class="navigation__item">
                     <a href="#" class="navigation__link">DLACZEGO MY</a>
@@ -39,12 +39,12 @@
         <a href="#" class="header__link">Otwórz swój sklep</a>
     </header>
 
-    <!--MAIN Section1-->
+    <!--MAIN Section Statistics-->
     <main>
-        <section class="section1 ">
-            <article class="container_2">
-                <h2 class="section1__h2">Najpopularniejsza platforma sprzedażowa w kraju</h2>
-                <div class="section1__statistics">
+        <section class="section__statistics">
+            <article class="section__statistics--container">
+                <h2 class="section__statistics--h2">Najpopularniejsza platforma sprzedażowa w kraju</h2>
+                <div class="section__statistics--content">
                     <div class="statistics__items">
                         <div class="stat__circle1">
                             <img class="stat__person" src="../First_project/images/icons/Person.svg" alt="Person">
@@ -70,23 +70,23 @@
             </article>
         </section>
 
-        <!--Section2-->
-        <section class="section2">
-            <div class="section2__article1 container_3">
+        <!--Section Articles-->
+        <section class="section__articles">
+            <div class="section__article1 section__articles--container">
                 <article class="article1__a">
                     <h2 class="article__h">Bądź zawsze pierwszy</h2>
                     <p class="article__p">Twój sklep będzie umieszczony na głównej stronie naszego katalogu, gdzie setki
                         tysięcy potencjalnych klientów ją zobaczy!</p>
                 </article>
                 <div class="article1__image">
-                    <img class="article1__img" src="../First_project/images/icons/Macbook2.png" alt="Macbook2">
+                    <img class="article1__img" src="../First_project/images/Macbook.png" alt="Macbook2">
                     <div class="article1__square"></div>
                 </div>
             </div>
 
-            <div class="section2__article2 container_3">
+            <div class="section__article2 section__articles--container">
                 <div class="article2__image">
-                    <img class="article2__img" src="../First_project/images/icons/iPhone2.png" alt="iPhone2">
+                    <img class="article2__img" src="../First_project/images/iPhone.png" alt="iPhone2">
                     <div class="article2__circle"></div>
                 </div>
                 <article class="article2__a">
@@ -96,7 +96,7 @@
                 </article>
             </div>
 
-            <div class="section2__article3 container_3">
+            <div class="section__article3 section__articles--container">
                 <div class="article3__box">
                     <article class="article3__a">
                         <h2 class="article__h">Zwiększ rozpoznawalność swojej marki</h2>
@@ -105,97 +105,102 @@
                     </article>
                 </div>
                 <div class="article3__square">
-                    <img class="article3__img" src="../First_project/images/icons/Trumpet.png" alt="Trumpet">
+                    <img class="article3__img" src="../First_project/images/Trumpet.png" alt="Trumpet">
                 </div>
             </div>
         </section>
 
-        <!--Section3-->
-        <section class="section3 container_4">
-            <h2 class="price__h2">Cennik</h2>
-            <div class="section3__price">
+        <!--Section Price-->
+        <section class="section__price section__price--container">
+            <h2 class="section__price--h2">Cennik</h2>
+            <div class="section__price--content">
+
                 <div class="price__basic">
-                    <h3 id="price__bp">Podstawowy</h3>
-                    <p class="prices prices--basic">$0</p>
+                    <h3 id="price__basic--h3">Podstawowy</h3>
+                    <p class="prices price__basic--p">$0</p>
                     <ul class="price__lists">
                         <li class="lists__items">
-                            <img src="../First_project/images/icons/checkmark.svg" alt="check">
+                            <img src="../First_project/images/icons/Ckechmark-1.svg" alt="check">
                             100 MB Przestrzeni dyskowej
                         </li>
                         <li class="lists__items">
-                            <img src="../First_project/images/icons/checkmark.svg" alt="check">
+                            <img src="../First_project/images/icons/Ckechmark-1.svg" alt="check">
                             1 Subdomena
                         </li>
                         <li class="lists__items">
-                            <img src="../First_project/images/icons/checkmark.svg" alt="check">
+                            <img src="../First_project/images/icons/Ckechmark-1.svg" alt="check">
                             1 konto E-mail
                         </li>
                         <li class="lists__items">
-                            <img src="../First_project/images/icons/close.svg" alt="close">
+                            <img src="../First_project/images/icons/Close.svg" alt="close">
                             2 Lata licencji
                         </li>
                         <li class="lists__items">
-                            <img src="../First_project/images/icons/close.svg" alt="close">
+                            <img src="../First_project/images/icons/Close.svg" alt="close">
                             Pełne wsparcie
                         </li>
+                        <a href="#" id="price__link--btn"></a>
                     </ul>
-
                 </div>
+
                 <div class="price__professional">
-                    <h3 id="price__p">Profesjonalny</h3>
-                    <p class="prices prices--prof">$25</p>
+                    <h3 id="price__professional--h3">Profesjonalny</h3>
+                    <p class="prices price__professional--p">$25</p>
                     <p class="price__limit">Oferta ograniczona</p>
                     <ul class="price__lists price price__lists--pro">
                         <li class="lists__items">
-                            <img src="../First_project/images/icons/checkmark.svg" alt="check">
+                            <img src="../First_project/images/icons/Ckechmark-1.svg" alt="check">
                             500 MB Przestrzeni dyskowej
                         </li>
                         <li class="lists__items">
-                            <img src="../First_project/images/icons/checkmark.svg" alt="check">
+                            <img src="../First_project/images/icons/Ckechmark-1.svg" alt="check">
                             2 Subdomeny
                         </li>
                         <li class="lists__items">
-                            <img src="../First_project/images/icons/checkmark.svg" alt="check">
+                            <img src="../First_project/images/icons/Ckechmark-1.svg" alt="check">
                             5 kont E-mail
                         </li>
                         <li class="lists__items">
-                            <img src="../First_project/images/icons/checkmark.svg" alt="check">
+                            <img src="../First_project/images/icons/Ckechmark-1.svg" alt="check">
                             Rok licencji
                         </li>
                         <li class="lists__items">
-                            <img src="../First_project/images/icons/close.svg" alt="close">
+                            <img src="../First_project/images/icons/Close.svg" alt="close">
                             Pełne wsparcie
                         </li>
+                        <a href="#" id="price__professional--btn"></a>
                     </ul>
                 </div>
+
                 <div class="price__premium">
-                    <h3 id="price__bp">Premium</h3>
-                    <p class="prices prices--premium">$60</p>
+                    <h3 id="price__premium--h3">Premium</h3>
+                    <p class="prices price__premium--p">$60</p>
                     <p class="price__limit">Oferta ograniczona</p>
                     <ul class="price__lists">
                         <li class="lists__items">
-                            <img src="../First_project/images/icons/checkmark.svg" alt="check">
+                            <img src="../First_project/images/icons/Ckechmark-1.svg" alt="check">
                             2 GB Przestrzeni dyskowej
                         </li>
                         <li class="lists__items">
-                            <img src="../First_project/images/icons/checkmark.svg" alt="check">
+                            <img src="../First_project/images/icons/Ckechmark-1.svg" alt="check">
                             4 Subdomeny
                         </li>
                         <li class="lists__items">
-                            <img src="../First_project/images/icons/checkmark.svg" alt="check">
+                            <img src="../First_project/images/icons/Ckechmark-1.svg" alt="check">
                             20 kont E-mail
                         </li>
                         <li class="lists__items">
-                            <img src="../First_project/images/icons/checkmark.svg" alt="check">
+                            <img src="../First_project/images/icons/Ckechmark-1.svg" alt="check">
                             2 Lata licencji
                         </li>
                         <li class="lists__items">
-                            <img src="../First_project/images/icons/close.svg" alt="close">
+                            <img src="../First_project/images/icons/Ckechmark-1.svg" alt="close">
                             Pełne wsparcie
                         </li>
+                        <a href="#" id="price__premium--btn"></a>
                     </ul>
-
                 </div>
+
             </div>
         </section>
 
@@ -269,20 +274,20 @@
 
         </section>
 
-        <!--       Section5 -->
-        <section class="section5">
-            <div class="container_6">
-                <div class="section5__info">
-                    <h2 class="info__h2">Masz pytania?</h2>
-                    <p class="info__p1">Zostaw dla nas swój adres mailowy, lub zadzwoń!</p>
-                    <div class="info__box">
+        <!-- Section Contact -->
+        <section class="section__contact">
+            <div class="section__contact--container">
+                <div class="section__info">
+                    <h2 class="section__info--h2">Masz pytania?</h2>
+                    <p class="section__info--p">Zostaw dla nas swój adres mailowy, lub zadzwoń!</p>
+                    <div class="section__info--content">
                         <img class="info__icons" src="../First_project/images/icons/Mail%20Icon.svg" alt="Mail">
-                        <span class="info__text">info@shopabc.pl</span>
+                        <span class="info__text"><a href="#">info@shopabc.pl</a></span>
                         <img class="info__icons" src="../First_project/images/icons/Phone%20Icon.svg" alt="Phone">
                         <span class="info__text">123 456 789</span>
                     </div>
                 </div>
-                <div class="section5__form">
+                <div class="section__form">
                     <form class="form__area">
                         <label class="form__label" for="name">Imię i nazwisko</label>
                         <input class="form__input" type="text" name="name" id="name">
@@ -300,6 +305,8 @@
             </div>
         </section>
     </main>
+
+     <!--Footer-->
 
     <footer class="footer">
         <div class="footer__content container">
@@ -323,7 +330,4 @@
     </footer>
 
 </body>
-
-<script src="js/index.js"></script>
-
 </html>
