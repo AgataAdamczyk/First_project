@@ -602,49 +602,101 @@ input[type="number"] {
     border: 1px solid var(--azure-light);
     box-shadow: 0 3px 6px var(--azure--light-rgba);
     border-radius: 6px;
-}
-
-.calc__select {
-    width: 442px;
-    margin-bottom: 20px;
-    padding: 10px 15px 10px 20px;
-    background-color: white;
-    border: 1px solid var(--azure-light);
-    box-shadow: 0 3px 6px var(--azure--light-rgba);
-    border-radius: 6px;
-    background-image: url("../images/icons/Arrow Down.svg");
-    background-repeat: no-repeat;
-    background-size: 20px 20px;
-    position: relative;
-    background-position: 95% 50%;
-}
-
-.select-selected {
-    background-color: #eb476e;
-}
-
-.calc__select:after {
-    list-style-type: none;
-    position: absolute;
-    background-color: white;
-    width: 100%;
-    max-width: 440px;
-    padding: 10px 20px 10px 20px;
-    border: 1px solid #eb476e;
-    border-radius: 6px;
-    box-shadow: 0 3px 6px rgba(235, 71, 110, 0.16);
-    top: 170px;
-    left: 0;
-    z-index: 1;
-}
-
-
-
-.select__placeholder {
     font-family: "Open Sans", Arial, sans-serif;
     font-size: 13px;
     line-height: 18px;
     color: var(--greyish);
+}
+
+
+/*   S E L E C T   */
+
+/* The container must be positioned relative: */
+.calc__select {
+    position: relative;
+    width: 440px;
+    height: 38px;
+    margin-bottom: 20px;
+    background-color: white;
+    border: 1px solid var(--azure-light);
+    box-shadow: 0 3px 6px var(--azure--light-rgba);
+    border-radius: 6px;
+}
+  
+.calc__select select {
+    display: none; /*hide original SELECT element:*/
+}
+  
+/* style the items (options), including the selected item: */
+.select-items div,
+.select-selected {
+    font-family: "Open Sans", Arial, sans-serif;
+    color: var(--black);
+    font-size: 13px;
+    line-height: 18px;
+    padding: 6.35px;
+    cursor: pointer;
+}
+
+.select-selected {
+    width: 330; /*370 */
+    height: 20px;
+    border-radius: 6px;
+    padding: 10px 20px;
+    color: var(--greyish);
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+    position: absolute;
+    content: "";
+    width: 21px;
+    height: 21px;
+    background-image: url("../images/icons/Arrow.svg");
+    background-repeat: no-repeat;
+    left: 92%;
+    padding: 12px;
+}
+  
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+    background-image: url("../images/icons/Arrow.svg");
+    transform: rotate(180deg);
+    background-repeat: no-repeat;
+    width: 21px;
+    height: 21px;
+    left: 87%;
+    top: -33%;
+}
+
+/* Style items (options): */
+.select-items {
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    max-width: 398px;
+    padding: 10px 20px 10px 20px;
+    border: 1px solid #eb476e;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(235, 71, 110, 0.16);
+    top: 52px;
+    left: -1px;
+    z-index: 1; 
+}
+
+/* .select-items .select-hide {
+    transition: 0.3 ease;
+} */
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+    display: none;
+    transition: 0.3 ease;
+}
+  
+.select-items div:hover,
+.same-as-selected {
+    background-color: #eb476e;
 }
 
 /*checkbox*/

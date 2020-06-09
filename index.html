@@ -213,13 +213,15 @@
                     <form action="#">
                         <input id="calc__input--quantityProducts" type="number" name="productsQuantity" placeholder="Ilość produktów">
                         <input id="calc__input--quantityOrders" type="number" name="ordersQuantity" placeholder="Szacowana ilość zamówień w miesiącu">
-
-                        <select class="calc__select" name="packageSelect">
-                            <option value="" disabled selected>Wybierz pakiet</option>
-                            <option value="basic">Podstawowy</option>
-                            <option value="professional">Profesjonalny</option>
-                            <option value="premium">Premium</option>
+                        
+                        <div class="calc__select">
+                        <select>
+                            <option value="0">Wybierz pakiet</option>
+                            <option value="1">Podstawowy</option>
+                            <option value="2">Profesjonalny</option>
+                            <option value="3">Premium</option>
                         </select>
+                        </div>
 
                         <div class="checkbox__box">
                             <label class="form__checkbox">
@@ -240,19 +242,19 @@
                     <div class="calc__results--box">
                         <span>Produkty</span>
                         <span id="products__price--calc"></span>
-                        <span id="products__price--value"></span>
+                        <span id="products__price--value">0$</span>
                     </div>
 
                     <div class="calc__results--box">
                         <span>Zamówienia</span>
                         <span id="orders__price--calc"></span>
-                        <span id="orders__price--value"></span>
+                        <span id="orders__price--value">0$</span>
                     </div>
 
                     <div class="calc__results--box">
                         <span>Pakiet</span>
                         <span id="package__select--option"></span>
-                        <span id="package__select--value"></span>
+                        <span id="package__select--value">0$</span>
                     </div>
 
                     <div class="calc__results--box">
