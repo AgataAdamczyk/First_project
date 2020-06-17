@@ -1,3 +1,5 @@
+(function() {
+
 /* Input nr products && orders */
 
 let productsQuantity = document.getElementById("calc__input--quantityProducts"),
@@ -14,54 +16,86 @@ let productsPriceCalc  = document.getElementById("products__price--calc"),
     ordersPriceCalc  = document.getElementById("orders__price--calc"),
     ordersPriceValue = document.getElementById("orders__price--value");
 
+let accountantCheckbox = document.querySelector("input[name=accountant]"),
+    accountantValue = document.getElementById("accountant__value");
 
-productsQuantity.addEventListener("change", function(e) {
-    let productsQuantityValue = e.target.value,
-        productsPrice = productsQuantityValue * 0.5;
-    console.log(productsQuantityValue);
-    console.log(productsPrice);
+let terminalCheckbox = document.querySelector("input[name=terminal]"),
+    terminalValue = document.getElementById("terminal__value");
 
-    return productsPriceCalc.innerText = productsQuantityValue + " * 0.5$",
-           productsPriceValue.innerText = productsPrice + "$";
+let totalValue = document.getElementById("total__value");
+
+let productsTotal = 0,
+    ordersTotal = 0,
+    accountantTotal = 35,
+    terminalTotal = 5,
+    packageTotal = 0;
+
+
+accountantValue.innerText = accountantTotal + "$";
+terminalValue.innerText = terminalTotal + "$";
+
+
+/* Calculate sum */
+
+let totalUpdate = function() {
+    total  = parseInt(productsTotal) + parseInt(ordersTotal) + packageTotal + accountantTotal + terminalTotal;
+
+    totalValue.innerText = total + "$";
+}
+
+
+/* Inputs products && orders */ 
+
+productsQuantity.addEventListener("input", function() {
+    
+    productsPriceCalc.innerText = parseInt(productsQuantity.value).toFixed() + " * 0.5$";
+    productsPriceValue.innerText = (productsQuantity.value * 0.5).toFixed(2) + "$";
+
+    productsTotal = (productsQuantity.value * 0.5).toFixed(2);
+
+    totalUpdate();       
 });
 
 
-ordersQuantity.addEventListener("change", function(e) {
-    let ordersQuantityValue = e.target.value;
-    let ordersPrice = ordersQuantityValue * 0.25;
-    console.log(ordersQuantityValue);
-    console.log(ordersPrice);
+ordersQuantity.addEventListener("input", function() {
 
-    return ordersPriceCalc.innerText = ordersQuantityValue + " * 0.25$",
-           ordersPriceValue.innerText = ordersPrice + "$";
+    ordersPriceCalc.innerText = parseInt(ordersQuantity.value).toFixed() + " * 0.25$";
+    ordersPriceValue.innerText = (ordersQuantity.value * 0.5).toFixed(2) + "$";
+
+    ordersTotal = (ordersQuantity.value * 0.5).toFixed(2);
+
+    totalUpdate();    
 });
 
 
 /* Checkbox accountant && terminal */
 
-let accountantCheckbox = document.querySelector("input[name=accountant]"),
-    accountantValue = document.getElementById("accountant__value");
 
 accountantCheckbox.addEventListener("change", function() {
 
     if(this.checked) {
-        accountantValue.innerText = "35$"; 
+        accountantTotal = 35;
+        accountantValue.innerText = accountantTotal + "$"; 
     } else {
-        accountantValue.innerText = "0$";
+        accountantTotal = 0;
+        accountantValue.innerText = accountantTotal + "$"; 
     }
+
+    totalUpdate();
 });
 
-
-let terminalCheckbox = document.querySelector("input[name=terminal]"),
-    terminalValue = document.getElementById("terminal__value");
 
 terminalCheckbox.addEventListener("change", function() {
 
     if(this.checked) {
-        terminalValue.innerText = "$5"; 
+        terminalTotal = 5;
+        terminalValue.innerText = terminalTotal + "$"; 
     } else {
-        terminalValue.innerText = "$0";
+        terminalTotal = 0;
+        terminalValue.innerText = terminalTotal + "$"; 
     }
+
+    totalUpdate();
 });
 
 
@@ -124,15 +158,21 @@ for(let i = 0; i < select.length; i++) {
             if(z.innerHTML === "Podstawowy") {
                 selectPackage.innerText = "Podstawowy";
                 selectPackageValue.innerText = "0$";
+                packageTotal = 0;
         
             } else if (z.innerHTML === "Profesjonalny") {
                 selectPackage.innerText = "Profesjonalny";
                 selectPackageValue.innerText = "25$";
+                packageTotal = 25;
         
             } else if (z.innerHTML === "Premium") {
                 selectPackage.innerText = "Premium";
                 selectPackageValue.innerText = "60$";
+                packageTotal = 60;
             }
+
+        totalUpdate();   
+
         });
         optionList.appendChild(optionItem);
     }
@@ -170,19 +210,81 @@ function closeAllSelect(elem) {
     }
   }
 
-  document.addEventListener("click", closeAllSelect);
+document.addEventListener("click", closeAllSelect);
 
 
-/* Calculate sum */
+
+/* ------------------------------ Contact form validation ----------------------------------------------------------- */
+
+let contactForm = document.querySelector(".form__area"),
+    fields  = contactForm.querySelectorAll("[data-error]");
+
+function isNotEmpty(field) {
+    return field.value !== "";
+}
+
+function isEmail(field) {
+    return field.value.indexOf("@") !== -1;
+}
+
+function displayErrors(errors) {
+    let ul = document.querySelector("ul.contactForm-error");
+
+    if(!ul) {
+        ul = document.createElement("ul");
+
+        ul.classList.add("contactForm-error");
+    }
+
+    ul.innerHTML = "";
+
+    errors.forEach(function(error) {
+        let li = document.createElement("li");
+
+        li.textContent = error;
+
+        ul.appendChild(li);
+        
+    });
+
+    contactForm.parentNode.insertBefore(ul, contactForm);
+}
 
 
-let total = document.getElementById("total__value"),
-    productsTotal = document.getElementById("products__price--value"),
-    ordersTotal = document.getElementById("orders__price--value"),
-    packageTotal = document.getElementById("package__select--value"),
-    accountantTotal = document.getElementById("accountant__value"),
-    terminalTotal = document.getElementById("terminal__value");
-  
-total.innerText = parseInt(productsTotal.innerText) + parseInt(ordersTotal.innerText) + parseInt(packageTotal.innerText) + parseInt(accountantTotal.innerText) + parseInt(terminalTotal.innerText) + "$";
+contactForm.addEventListener("submit", function(e) {
 
-// total.innerText = parseInt(productsPriceValue.value) + parseInt(ordersPriceValue) + parseInt(selectPackageValue);
+    e.preventDefault();
+
+    let errors = [];
+
+    for(let i = 0; i < fields.length; i++) {
+        let field = fields[i],
+            isValid = false;
+
+        if(field.type === "text") {
+            isValid = isNotEmpty(field);
+
+        } else if(field.type === "email") {
+            isValid = isEmail(field);
+        } 
+
+        if(!isValid) {
+            field.classList.add("contactForm-error");
+            errors.push(field.dataset.error);
+        } else {
+            contactForm.submit();
+        }
+    }
+
+    if(errors.length) {
+        displayErrors(errors);
+    } else {
+        contactForm.submit();
+    }
+
+    console.log(errors);
+
+}, false);
+
+})();
+

@@ -8,6 +8,7 @@ body {
     --azure-dark: #08a6e4;
     --azure-light: #07ace6;
     --watermelon: #fb3b64;
+    --red: #eb476e;
     --aqua-marine: #55dfb4;
     --black: #000000;
     --greyish: #a5a5a5;
@@ -676,27 +677,23 @@ input[type="number"] {
     width: 100%;
     max-width: 398px;
     padding: 10px 20px 10px 20px;
-    border: 1px solid #eb476e;
+    border: 1px solid var(--watermelon);
     border-radius: 6px;
     box-shadow: 0 3px 6px rgba(235, 71, 110, 0.16);
     top: 52px;
     left: -1px;
-    z-index: 1; 
+    z-index: 1;
+    transition: 0.5 ease;
 }
-
-/* .select-items .select-hide {
-    transition: 0.3 ease;
-} */
 
 /* Hide the items when the select box is closed: */
 .select-hide {
     display: none;
-    transition: 0.3 ease;
 }
-  
+
 .select-items div:hover,
 .same-as-selected {
-    background-color: #eb476e;
+    background-color: var(--watermelon);
 }
 
 /*checkbox*/
@@ -885,11 +882,16 @@ input[type="email"] {
     outline: none;
     display: block;
     width: 100%;
-    padding: 15px 0;
+    padding: 15px 5px;
     border: none;
     border-bottom: 1px solid var(--greyish);
     background: transparent;
     margin-bottom: 38px;
+}
+
+input[type="text"].contactForm-error,
+input[type="email"].contactForm-error {
+    border-bottom: 1px solid var(--watermelon);
 }
 
 .form__btn {
@@ -906,6 +908,19 @@ input[type="email"] {
     margin-top: 55px;
     margin-left: 213px;
     cursor: pointer;
+}
+
+ul.contactForm-error {
+    width: 420px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+ul.contactForm-error li {
+    font-size: 0.8em;
+    list-style: none;
+    line-height: 30px;
+    color: var(--watermelon);
 }
 
 /*FOOTER*/
